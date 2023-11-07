@@ -50,7 +50,7 @@ namespace MonogDB
         {
             // Use the pManager object to register your output parameters.
             // Output parameters do not have default values, but they too must have the correct access type.
-            pManager.AddTextParameter("result", "result", "Spiral curve", GH_ParamAccess.item);
+            pManager.AddTextParameter("result", "result", "result", GH_ParamAccess.item);
             pManager.AddGenericParameter("client", "client", "MongoDB Client", GH_ParamAccess.item);
 
             // Sometimes you want to hide a specific parameter from the Rhino preview.
@@ -79,9 +79,22 @@ namespace MonogDB
 
             if (run == true)
             {
-                var connection = CreateConnection(connectstring);
+                try
+                {
+                    var connection = CreateConnection(connectstring);
 
-                DA.SetData(1, connection);
+
+
+                    DA.SetData(1, connection);
+                    DA.SetData(0, "Success!");
+                }
+                catch (Exception e)
+                {
+                    DA.SetData(0, e);
+                }
+                
+
+  
             }
         }
 
@@ -108,7 +121,9 @@ namespace MonogDB
         /// You can add image files to your project resources and access them like this:
         /// return Resources.IconForThisComponent;
         /// </summary>
-        protected override System.Drawing.Bitmap Icon => null;
+        protected override System.Drawing.Bitmap Icon => MongoDB.Properties.Resources.mongconnect;
+
+
 
         /// <summary>
         /// Each component must have a unique Guid to identify it. 

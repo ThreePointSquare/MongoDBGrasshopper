@@ -9,22 +9,20 @@ using MongoDB.Bson.Serialization;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace MongoDB
 {
     internal class Helpers
     {
-        
 
-            public static object ListDBs(MongoClient client)
-            {
 
-         
-                var dbList = client.ListDatabases().ToList();
-                return dbList;
+        public static List<BsonDocument> ListDBs(MongoClient client)
+        {
+            var databases = client.ListDatabases().ToList();
 
-            }
-
+            return databases;
+        }
             public static object SimpleConnect(string connectstring)
             {
                 MongoClient dbClient = new MongoClient(connectstring);
