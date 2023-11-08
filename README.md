@@ -1,7 +1,5 @@
 # MongoDBGrasshopper
-
-![Uploading mongo01.gif…]()
-
+![mongo01](https://github.com/ThreePointSquare/MongoDBGrasshopper/assets/36119651/7dac6463-97f8-4753-a248-f9da69eb7158)
 
 Push and Pull your Data from MongoDB atlas through Grasshopper!
 
