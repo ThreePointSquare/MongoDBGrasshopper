@@ -1,8 +1,9 @@
 # MongoDBGrasshopper
 
-Works In Progress | Grasshopper3d and MongoDb
+![Uploading mongo01.gif…]()
 
-Push and Pull your Data from MongoDB atlas through Grasshopper! (link(s) in the comments). 
+
+Push and Pull your Data from MongoDB atlas through Grasshopper!
 
 Provided is a demo cluster and set of sample datasets to work with on MongoDB atlas. Users should to create their own cluster on MongoDB.
  
